@@ -68,92 +68,92 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- 2. 資料庫 (Unit 23: 14個單字 - Moedict Verified) ---
+# --- 2. 資料庫 (Unit 23: 14個單字 - 句子提取的新詞) ---
 vocab_data = [
-    {"amis": "Hekal", "chi": "外部 / 世界 / 自然", "icon": "🌍", "source": "Moedict: hekal"},
-    {"amis": "Riyar", "chi": "海洋 / 海", "icon": "🌊", "source": "Moedict: riyar"},
-    {"amis": "Omah", "chi": "田地 / 農田", "icon": "🌾", "source": "Moedict: omah"},
-    {"amis": "Kilang", "chi": "樹 / 木頭", "icon": "🌳", "source": "Moedict: kilang"},
-    {"amis": "Fokeloh", "chi": "石頭", "icon": "🪨", "source": "Moedict: fokeloh"},
-    {"amis": "Fanaw", "chi": "池塘 / 湖泊", "icon": "💧", "source": "Moedict: fanaw"},
-    {"amis": "Cidal", "chi": "太陽", "icon": "☀️", "source": "Moedict: cidal"},
-    {"amis": "Folad", "chi": "月亮 / 月份", "icon": "🌙", "source": "Moedict: folad"},
-    {"amis": "Kakarayan", "chi": "天空", "icon": "☁️", "source": "Moedict: kakarayan"},
-    {"amis": "Talo'an", "chi": "工寮", "icon": "🛖", "source": "Moedict: talo'an"},
-    {"amis": "Foting", "chi": "魚", "icon": "🐟", "source": "Moedict: foting"},
-    {"amis": "Mifoting", "chi": "捕魚", "icon": "🎣", "source": "Moedict: mi-foting"},
-    {"amis": "Ma'efer", "chi": "飛", "icon": "🦅", "source": "Moedict: ma'efer"},
-    {"amis": "Matayal", "chi": "工作", "icon": "⚒️", "source": "Moedict: matayal"},
+    {"amis": "Hekal", "chi": "世界 / 外部", "icon": "🌍", "source": "Row 2204"},
+    {"amis": "Kanatal", "chi": "國家 / 島嶼", "icon": "🗾", "source": "Row 2204"},
+    {"amis": "Cidal", "chi": "太陽", "icon": "☀️", "source": "Row 732"},
+    {"amis": "La'eno", "chi": "下方 / 底部", "icon": "⬇️", "source": "Row 732"},
+    {"amis": "Kakarayan", "chi": "天空", "icon": "☁️", "source": "Row 798"},
+    {"amis": "Ma'efer", "chi": "飛", "icon": "🦅", "source": "Row 798"},
+    {"amis": "Ma'orad", "chi": "下雨", "icon": "🌧️", "source": "Row 259"},
+    {"amis": "Mikilidong", "chi": "躲雨 / 遮蔽", "icon": "☂️", "source": "Row 259"},
+    {"amis": "Fanaw", "chi": "池塘", "icon": "💧", "source": "Row 1453"},
+    {"amis": "Miparakar", "chi": "放魚籠(陷阱)", "icon": "🎣", "source": "Row 1453"},
+    {"amis": "Talariyar", "chi": "去海邊", "icon": "🌊", "source": "Row 223"},
+    {"amis": "Mifoting", "chi": "捕魚", "icon": "🐟", "source": "Row 223"},
+    {"amis": "Folad", "chi": "月亮 / 月份", "icon": "🌙", "source": "Row 1815"},
+    {"amis": "Matayal", "chi": "工作 / 勞動", "icon": "⚒️", "source": "Row 732"},
 ]
 
 # --- 句子庫 (7句: 嚴格源自 CSV 並移除連字號) ---
 sentences = [
-    {"amis": "Talariyar a mifoting ci mama.", "chi": "爸爸去海上捕魚。", "icon": "🌊", "source": "Row 223 (Cleaned)"},
-    {"amis": "Ano ma'orad 'i, mikilidong kita i kala'eno no kilang.", "chi": "如果下雨呢，我們就去樹下躲避。", "icon": "🌳", "source": "Row 259 (Cleaned)"},
-    {"amis": "Pina ko toki a maomah kami?", "chi": "我們幾點做農活(勞動)？", "icon": "🌾", "source": "Row 676 (Cleaned)"},
-    {"amis": "Ma'efer kako i kakarayan.", "chi": "我在天空飛翔。", "icon": "🦅", "source": "Row 798 (Cleaned)"},
-    {"amis": "Tahakowa kami a matayal i la'eno no cidal?", "chi": "我們在太陽下要工作到何時？", "icon": "☀️", "source": "Row 732 (Cleaned)"},
-    {"amis": "Miparakar i fanaw.", "chi": "在池塘放魚籠陷阱。", "icon": "💧", "source": "Row 1453 (Cleaned)"},
-    {"amis": "O samakapahay a kanatal i hekal ko Taiwan.", "chi": "台灣是世界上最美麗的國家。", "icon": "🌍", "source": "Row 2204 (Cleaned)"},
+    {"amis": "O samakapahay a kanatal i hekal ko Taiwan.", "chi": "台灣是世界上最美麗的國家。", "icon": "🇹🇼", "source": "Row 2204"},
+    {"amis": "Tahakowa kami a matayal i la'eno no cidal?", "chi": "我們在太陽下要工作到何時？", "icon": "☀️", "source": "Row 732"},
+    {"amis": "Ma'efer kako i kakarayan.", "chi": "我在天空飛翔。", "icon": "🦅", "source": "Row 798"},
+    {"amis": "Ano ma'orad 'i, mikilidong kita i kala'eno no kilang.", "chi": "如果下雨呢，我們就去樹下躲避。", "icon": "🌳", "source": "Row 259"},
+    {"amis": "Miparakar i fanaw.", "chi": "在池塘放魚籠陷阱。", "icon": "🎣", "source": "Row 1453"},
+    {"amis": "Talariyar a mifoting ci mama.", "chi": "爸爸去海上捕魚。", "icon": "🌊", "source": "Row 223"},
+    {"amis": "Minokay kako i nacila a folad.", "chi": "我上個月(昨天的月亮)回家。", "icon": "🌙", "source": "Row 1815"},
 ]
 
 # --- 3. 隨機題庫 (Synced) ---
 raw_quiz_pool = [
     {
-        "q": "Talariyar a mifoting ci mama.",
-        "audio": "Talariyar a mifoting ci mama",
-        "options": ["爸爸去海上捕魚", "爸爸去山上打獵", "爸爸去田裡工作"],
-        "ans": "爸爸去海上捕魚",
-        "hint": "Riyar (海) + Mifoting (捕魚) (Row 223)"
+        "q": "O samakapahay a kanatal i hekal ko Taiwan.",
+        "audio": "O samakapahay a kanatal i hekal ko Taiwan",
+        "options": ["台灣是世界上最美的國家", "台灣是很大的島", "台灣有很多山"],
+        "ans": "台灣是世界上最美的國家",
+        "hint": "Kanatal (國家), Hekal (世界) (Row 2204)"
     },
     {
-        "q": "Ma'efer kako i kakarayan.",
-        "audio": "Ma'efer kako i kakarayan",
-        "options": ["我在天空飛翔", "我在地上走路", "我在水裡游泳"],
-        "ans": "我在天空飛翔",
-        "hint": "Ma'efer (飛) + Kakarayan (天空) (Row 798)"
+        "q": "Ano ma'orad 'i, mikilidong kita...",
+        "audio": "Ano ma'orad 'i, mikilidong kita",
+        "options": ["如果下雨，我們去躲雨", "如果出太陽，我們去游泳", "如果颳風，我們回家"],
+        "ans": "如果下雨，我們去躲雨",
+        "hint": "Ma'orad (下雨), Mikilidong (躲避) (Row 259)"
     },
     {
-        "q": "單字測驗：Fanaw",
-        "audio": "Fanaw",
-        "options": ["池塘/湖泊", "海", "河"],
-        "ans": "池塘/湖泊",
-        "hint": "Row 1453: Miparakar i fanaw (在池塘放陷阱)"
+        "q": "單字測驗：Miparakar",
+        "audio": "Miparakar",
+        "options": ["放魚籠/陷阱", "游泳", "洗澡"],
+        "ans": "放魚籠/陷阱",
+        "hint": "在 Fanaw 做的事 (Row 1453)"
     },
     {
-        "q": "單字測驗：Kilang",
-        "audio": "Kilang",
-        "options": ["樹/木頭", "草", "花"],
-        "ans": "樹/木頭",
-        "hint": "Row 259: ...i kala'eno no kilang (在樹下)"
+        "q": "單字測驗：La'eno",
+        "audio": "La'eno",
+        "options": ["下方", "上方", "裡面"],
+        "ans": "下方",
+        "hint": "Row 732: i la'eno no cidal (在太陽下)"
     },
     {
         "q": "Tahakowa kami a matayal i la'eno no cidal?",
-        "audio": "Tahakowa kami a matayal i la'eno no cidal?",
-        "options": ["我們在太陽下要工作到何時？", "我們在月亮下要休息到何時？", "我們在樹下要睡到何時？"],
-        "ans": "我們在太陽下要工作到何時？",
-        "hint": "Cidal (太陽) + Matayal (工作) (Row 732)"
+        "audio": "Tahakowa kami a matayal i la'eno no cidal",
+        "options": ["我們在太陽下工作到何時？", "我們在樹下休息到何時？", "我們在家裡睡到何時？"],
+        "ans": "我們在太陽下工作到何時？",
+        "hint": "Matayal (工作), Cidal (太陽)"
     },
     {
-        "q": "單字測驗：Omah",
-        "audio": "Omah",
-        "options": ["田地", "家", "學校"],
-        "ans": "田地",
-        "hint": "種菜的地方 (Row 676)"
+        "q": "單字測驗：Kanatal",
+        "audio": "Kanatal",
+        "options": ["國家/島嶼", "海洋", "城市"],
+        "ans": "國家/島嶼",
+        "hint": "Taiwan o kanatal (Row 2204)"
     },
     {
-        "q": "單字測驗：Hekal",
-        "audio": "Hekal",
-        "options": ["世界/外部", "內部", "上面"],
-        "ans": "世界/外部",
-        "hint": "Row 2204: ...i hekal (在世界上)"
+        "q": "單字測驗：Ma'efer",
+        "audio": "Ma'efer",
+        "options": ["飛", "跑", "跳"],
+        "ans": "飛",
+        "hint": "在 Kakarayan (天空) 的動作 (Row 798)"
     },
     {
-        "q": "單字測驗：Talo'an",
-        "audio": "Talo'an",
-        "options": ["工寮", "別墅", "大樓"],
-        "ans": "工寮",
-        "hint": "田裡的休息小屋"
+        "q": "Talariyar a mifoting ci mama.",
+        "audio": "Talariyar a mifoting ci mama",
+        "options": ["爸爸去海邊捕魚", "爸爸去山上打獵", "爸爸去河邊玩水"],
+        "ans": "爸爸去海邊捕魚",
+        "hint": "Tala-riyar (去海邊) (Row 223)"
     }
 ]
 
@@ -177,13 +177,13 @@ if 'init' not in st.session_state:
 
 # --- 5. 主介面 ---
 st.markdown("<h1 style='text-align: center; color: #1B5E20;'>Unit 23: O Hekal</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #666;'>大自然與環境 (Nature)</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #666;'>大自然與環境 (CSV Extracted)</p>", unsafe_allow_html=True)
 
 tab1, tab2 = st.tabs(["📚 詞彙與句型", "🎲 隨機挑戰"])
 
 # === Tab 1: 學習模式 ===
 with tab1:
-    st.subheader("📝 核心單字")
+    st.subheader("📝 核心單字 (從句子提取)")
     col1, col2 = st.columns(2)
     for i, word in enumerate(vocab_data):
         with (col1 if i % 2 == 0 else col2):
@@ -247,7 +247,7 @@ with tab2:
         <div style='text-align: center; padding: 30px; background-color: #C8E6C9; border-radius: 20px; margin-top: 20px;'>
             <h1 style='color: #1B5E20;'>🏆 挑戰成功！</h1>
             <h3 style='color: #333;'>本次得分：{st.session_state.score}</h3>
-            <p>你已經學會自然環境的詞彙了！</p>
+            <p>你已經掌握這些自然詞彙了！</p>
         </div>
         """, unsafe_allow_html=True)
         
